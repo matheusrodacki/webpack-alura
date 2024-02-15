@@ -1,6 +1,7 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CssMinimizerWebpackPlugin = require('css-minimizer-webpack-plugin');
+const webpack = require('webpack');
 const path = require('path');
 
 module.exports = {
@@ -17,7 +18,7 @@ module.exports = {
   },
   optimization: {
     minimize: true,
-    minimizer: [new CssMinimizerWebpackPlugin()],
+    minimizer: [new CssMinimizerWebpackPlugin(), '...'],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -26,5 +27,6 @@ module.exports = {
       hash: true,
     }),
     new MiniCssExtractPlugin({ filename: 'style.css' }),
+    new webpack.optimize.ModuleConcatenationPlugin(),
   ],
 };
