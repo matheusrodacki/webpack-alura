@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkalurabank=self.webpackChunkalurabank||[]).push([[224],{224:(e,a,s)=>{s.r(a),s.d(a,{NegociacoesService:()=>n});var t=s(556);class n{obterNegociacoesDoDia(){return fetch("http://localhost:8080/dados").then((e=>e.json())).then((e=>e.map((e=>new t.O(new Date,e.vezes,e.montante)))))}}}}]);
